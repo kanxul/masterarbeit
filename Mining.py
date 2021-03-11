@@ -27,7 +27,7 @@ if __name__ == '__main__':
     transactions = '''Alex->Hape->20
     Mando->Cara->45
     '''
-    difficulty = 6
+    difficulty = 4
     import time
     start = time.time()
     print("Start Mining")
