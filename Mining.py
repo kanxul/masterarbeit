@@ -1,8 +1,4 @@
 from hashlib import sha256
-MAX_NONCE = 1000000000
-
-str1 = "Hans-Peter Klossek"
-str2 = str1
 
 def MAX_NONCE(difficulty):
     return int(16**(difficulty+1) )
