@@ -1,4 +1,6 @@
 from hashlib import sha256
+import sys
+import time
 
 def MAX_NONCE(difficulty):
     return int(16**(difficulty+1) )
@@ -22,12 +24,14 @@ def mine(block_number, transactions, previous_hash, prefix_zeros):
     
     raise BaseException(f"Couldn't find correct has after trying {MAX_NONCE} times")
 
-
-if __name__ == '__main__':
+def main():
+    for arg in sys.argv[1:]:
+        print(f"Difficultiy: {arg}")
+    
     transactions = '''Alex->Hape->20
     Mando->Cara->45
     '''
-    difficulty = 4
+    difficulty = int(arg)
     import time
     start = time.time()
     print("Start Mining")
@@ -35,9 +39,17 @@ if __name__ == '__main__':
             transactions, 
             'b5d4045c3f466fa91fe2cc6abe79232a1a57cdf104f7a26e716e0a1e2789df78',
             difficulty)
+
+    print(f"Block Hash : {new_hash}")
     total_time = str((time.time() - start))
     hash_rate = nonce/float(total_time)/1000000
-    print(f"Block Hash : {new_hash}")
     print(f"end mining. Mining took: {total_time} secondes and {hash_rate} MH/s")
+
+
+
+if __name__ == '__main__':
+    main()
+
+
     
 
