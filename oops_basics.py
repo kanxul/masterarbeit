@@ -30,6 +30,7 @@ class Car:
         print("Year:      {}".format(self.year))
         print("Color:     {}".format(self.color))
         print("Moon Roof: {}".format(self.moon_roof))
+        print("Number of tires {}".format(self.no_of_tires))
 
     pass
 
@@ -42,6 +43,14 @@ def main():
     car1.get_info()
     car2.get_info()
     car3.get_info()
+
+    car3.color = "Blau"
+    car3.get_info()
+
+    Car.no_of_tires = 25
+
+    car2.get_info()
+
 
 if __name__ == '__main__':
     main()
