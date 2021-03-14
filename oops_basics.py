@@ -23,6 +23,10 @@ class Car:
     def stop_the_engine(self):
         self.engine_running = False
 
+    # Destructor
+    def __del__(self):
+        pass
+
     def get_info(self):
         print("Printing car details:".center(58, "-"))
         print("Make:      {}".format(self.make))
@@ -31,6 +35,8 @@ class Car:
         print("Color:     {}".format(self.color))
         print("Moon Roof: {}".format(self.moon_roof))
         print("Number of tires {}".format(self.no_of_tires))
+
+
 
     pass
 
@@ -44,12 +50,14 @@ def main():
     car2.get_info()
     car3.get_info()
 
-    car3.color = "Blau"
-    car3.get_info()
+    del car3
+    del car1
 
-    Car.no_of_tires = 25
+    car3.get_info()   
 
-    car2.get_info()
+
+
+
 
 
 if __name__ == '__main__':
