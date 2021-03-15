@@ -1,7 +1,5 @@
 import pandas as pd
 
-#Test 
-
 start_block_reward = 50
 reward_interval = 210000
 
