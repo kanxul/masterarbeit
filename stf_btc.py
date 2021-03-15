@@ -1,7 +1,5 @@
 import pandas as pd
 
-# Ich schreibe hier ein wenig Stuss
-
 start_block_reward = 50
 reward_interval = 210000
 
